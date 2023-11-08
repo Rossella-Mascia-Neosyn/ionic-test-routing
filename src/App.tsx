@@ -1,7 +1,6 @@
-import { Redirect, Route } from 'react-router-dom';
-import { IonApp, IonLabel, IonRouterOutlet, IonTabBar, IonTabButton, IonTabs, setupIonicReact } from '@ionic/react';
+import { Redirect, Route, useHistory } from 'react-router-dom';
+import { IonApp, IonButton, IonLabel, IonRouterOutlet, IonTabBar, IonTabButton, IonTabs, setupIonicReact } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
-import Home from './pages/Home';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -24,13 +23,18 @@ import './theme/variables.css';
 import React from 'react';
 import LoginPage from './pages/LoginPage';
 import { AuthContext } from './context/AuthContext';
-import Tab1 from './tabs/Tab1';
-import Tab2 from './tabs/Tab2';
+import Home from './tabs/Home';
+import AccountPage from './pages/AccountPage';
+import EditAccount from './pages/EditAccount';
+import MyTabs from './components/MyTabs';
+import Deposit from './tabs/Deposit';
+import PickUp from './tabs/PickUp';
 
 setupIonicReact();
 
 const App: React.FC = () => {
   const { authValues } = React.useContext(AuthContext);
+
   return (
     <IonApp>
       {!authValues.authenticated ? (
@@ -49,29 +53,12 @@ const App: React.FC = () => {
         </IonReactRouter>
       ) : (
         <IonReactRouter>
-          <IonTabs>
-            <IonRouterOutlet>
-              {/* specify route to each of teh tabs*/}
-              <Route path="/tab1" component={Tab1} exact={true} />
-              <Route path="/tab2" component={Tab2} exact={true} />
-
-              {/* default route is to tab1 */}
-              <Route
-                path="/"
-                render={() => <Redirect to="/tab1" />}
-                exact={true}
-              />
-            </IonRouterOutlet>
-            {/* draw what the tab bar should look like*/}
-            <IonTabBar slot="bottom">
-              <IonTabButton tab={'tab1'} href={'/tab1'}>
-                <IonLabel>{'Tab One'}</IonLabel>
-              </IonTabButton>
-              <IonTabButton tab={'tab2'} href={'/tab2'}>
-                <IonLabel>{'Tab Two'}</IonLabel>
-              </IonTabButton>
-            </IonTabBar>
-          </IonTabs>
+          <Route path="/home" component={Home} exact={true} />
+          <Route path="/account" component={AccountPage} exact={true} />
+          <Route path="/account/edit-account" component={EditAccount} exact={true} />
+          <Route path="/deposit" component={Deposit} exact={true} />
+          <Route path="/pick-up" component={PickUp} exact={true} />
+          <MyTabs />
         </IonReactRouter>
       )}
     </IonApp>

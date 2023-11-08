@@ -14,44 +14,43 @@ import React from 'react';
 import { AuthContext } from '../context/AuthContext';
 import { useHistory } from 'react-router';
 
-const Tab1 = () => {
+const Home = () => {
   const { authValues, logout } = React.useContext(AuthContext);
   const history = useHistory();
 
   useIonViewWillEnter(() => {
-    console.log('will enter');
+    console.log('will enter Home');
   });
   useIonViewDidEnter(() => {
-    console.log('did enter');
+    console.log('did enter Home');
   });
 
   useIonViewWillLeave(() => {
-    console.log('will leave');
+    console.log('will leave Home');
   });
   useIonViewDidLeave(() => {
-    console.log('did leave');
+    console.log('did leave Home');
   });
 
   return (
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>Tab 1</IonTitle>
+          <IonTitle>Home</IonTitle>
         </IonToolbar>
-        <IonContent>
-          <div>{JSON.stringify(authValues.user)}</div>
-          <IonButton
-            onClick={() => {
-              logout();
-              history.replace('/login');
-            }}
-          >
-            LOGOUT
-          </IonButton>
-        </IonContent>
       </IonHeader>
+      <IonContent>
+        <div>{JSON.stringify(authValues.user)}</div>
+        <IonButton
+          onClick={() => {
+            history.push('/account');
+          }}
+        >
+          Account
+        </IonButton>
+      </IonContent>
     </IonPage>
   );
 };
 
-export default Tab1;
+export default Home;

@@ -5,6 +5,10 @@ import {
   IonPage,
   IonTitle,
   IonToolbar,
+  useIonViewDidEnter,
+  useIonViewDidLeave,
+  useIonViewWillEnter,
+  useIonViewWillLeave,
 } from '@ionic/react';
 import React from 'react';
 import { AuthContext } from '../context/AuthContext';
@@ -16,8 +20,22 @@ const LoginPage = () => {
 
   const doLogin = async () => {
     let result = await login({ password: 'aaron', user: 'aaron' });
-    result && history.replace('/tab1');
+    result && history.replace('/home');
   };
+
+  useIonViewWillEnter(() => {
+    console.log('will enter LoginPage');
+  });
+  useIonViewDidEnter(() => {
+    console.log('did enter LoginPage');
+  });
+
+  useIonViewWillLeave(() => {
+    console.log('will leave LoginPage');
+  });
+  useIonViewDidLeave(() => {
+    console.log('did leave LoginPage');
+  });
 
   return (
     <IonPage>
