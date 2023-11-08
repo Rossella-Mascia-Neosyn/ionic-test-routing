@@ -1,4 +1,5 @@
 import { IonHeader, IonPage, IonTitle, IonToolbar, useIonViewDidEnter, useIonViewDidLeave, useIonViewWillEnter, useIonViewWillLeave } from '@ionic/react';
+import { useEffect } from 'react';
 
 const Deposit = () => {
   useIonViewWillEnter(() => {
@@ -14,6 +15,13 @@ const Deposit = () => {
   useIonViewDidLeave(() => {
     console.log('did leave Deposit');
   });
+  useEffect(() => {
+    console.log('useEffect Deposit');
+
+    return () => {
+      console.log('unmount useEffect Deposit');
+    }
+  }, []);
   return <IonPage>
     <IonHeader>
       <IonToolbar>

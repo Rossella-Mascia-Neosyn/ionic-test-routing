@@ -19,6 +19,10 @@ const EditAccount = () => {
   });
   useEffect(() => {
     console.log('useEffect EditAccount');
+
+    return () => {
+      console.log('unmount useEffect EditAccount');
+    }
   }, [])
   return (
     <IonPage>

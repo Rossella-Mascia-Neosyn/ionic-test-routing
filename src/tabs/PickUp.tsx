@@ -1,4 +1,5 @@
 import { IonHeader, IonPage, IonTitle, IonToolbar, useIonViewDidEnter, useIonViewDidLeave, useIonViewWillEnter, useIonViewWillLeave } from '@ionic/react';
+import { useEffect } from 'react';
 
 const PickUp = () => {
   useIonViewWillEnter(() => {
@@ -14,6 +15,13 @@ const PickUp = () => {
   useIonViewDidLeave(() => {
     console.log('did leave PickUp');
   });
+  useEffect(() => {
+    console.log('useEffect PickUp');
+
+    return () => {
+      console.log('unmount useEffect PickUp');
+    }
+  }, []);
   return <IonPage>
     <IonHeader>
       <IonToolbar>

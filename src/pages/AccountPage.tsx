@@ -22,7 +22,11 @@ const AccountPage = () => {
   });
   useEffect(() => {
     console.log('useEffect AccountPage');
-  }, [])
+
+    return () => {
+      console.log('unmount useEffect AccountPage');
+    }
+  }, []);
   return (
     <IonPage>
       <IonHeader>
@@ -41,7 +45,7 @@ const AccountPage = () => {
         <p>my account</p>
         <IonButton
           onClick={() => {
-            history.push('/tab1/account/edit-account');
+            history.push('/account/edit-account');
           }}
         >
           Edit Account

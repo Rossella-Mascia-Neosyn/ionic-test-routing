@@ -41,6 +41,10 @@ const Home = () => {
   useEffect(() => {
     console.log('useEffect Home');
     fetchData();
+
+    return () => {
+      console.log('unmount useEffect Home');
+    }
   }, []);
 
   return (
