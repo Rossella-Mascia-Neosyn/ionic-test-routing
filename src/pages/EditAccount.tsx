@@ -1,4 +1,5 @@
-import { IonButton, IonContent, IonHeader, IonPage, IonTitle, IonToolbar, useIonViewDidEnter, useIonViewDidLeave, useIonViewWillEnter, useIonViewWillLeave } from "@ionic/react"
+import { IonButton, IonContent, IonHeader, IonPage, IonTitle, IonToolbar, useIonRouter, useIonViewDidEnter, useIonViewDidLeave, useIonViewWillEnter, useIonViewWillLeave } from "@ionic/react"
+import { useEffect } from "react";
 import { useHistory } from "react-router";
 
 const EditAccount = () => {
@@ -16,6 +17,9 @@ const EditAccount = () => {
   useIonViewDidLeave(() => {
     console.log('did leave EditAccount');
   });
+  useEffect(() => {
+    console.log('useEffect EditAccount');
+  }, [])
   return (
     <IonPage>
       <IonHeader>

@@ -1225,29 +1225,29 @@
     debug "^4.0.0"
     tslib "^2.0.1"
 
-"@ionic/core@7.5.3":
-  version "7.5.3"
-  resolved "https://registry.yarnpkg.com/@ionic/core/-/core-7.5.3.tgz#2930dc4da0a5765930bb1cf12a9aed2a2775b5e7"
-  integrity sha512-nd4NV6gSgohLvKHGmf+jAcgzI1387eKq3enjBfE574FK/ikl5CeIltv0MBVJr9lz0pNSL/y9m1tdaFg+syASuA==
+"@ionic/core@7.5.4":
+  version "7.5.4"
+  resolved "https://registry.yarnpkg.com/@ionic/core/-/core-7.5.4.tgz#81353b835f20f4b225e3a0b69703308196fa7489"
+  integrity sha512-rZbKlcVucRTDOK2Woh4CWPePlsXiUt3G9dCUniduKD7WeiuAk0GzfmoM3WXBvcUpkVTUIOrvKHaqd3JJSWEIzg==
   dependencies:
-    "@stencil/core" "^4.6.0"
+    "@stencil/core" "^4.7.1"
     ionicons "^7.2.1"
     tslib "^2.1.0"
 
-"@ionic/react-router@^7.5.2":
-  version "7.5.3"
-  resolved "https://registry.yarnpkg.com/@ionic/react-router/-/react-router-7.5.3.tgz#5f01d694c11e45609e9a86d0076ea13d502df3bd"
-  integrity sha512-Ca8lmhPF7q8DCjYVDfWfs3S0t/gVfviHFp/KJHLf41ZBeJwbT8r6b4ZJfL/2lLVjO+Zrluqzn9kc6+KlwqnTvA==
+"@ionic/react-router@^7.0.0":
+  version "7.5.4"
+  resolved "https://registry.yarnpkg.com/@ionic/react-router/-/react-router-7.5.4.tgz#d3fe3b0ed7e66233208633501bad74924fb26eca"
+  integrity sha512-LhU2bSfqaCH58kLZQgsux3mWjRehfRPTJ92bbjTeMENNRxjaAc6Ti/Twvxn1aIr4cdRTL3dcu0PApGSTQTQMPg==
   dependencies:
-    "@ionic/react" "7.5.3"
+    "@ionic/react" "7.5.4"
     tslib "*"
 
-"@ionic/react@7.5.3", "@ionic/react@^7.5.2":
-  version "7.5.3"
-  resolved "https://registry.yarnpkg.com/@ionic/react/-/react-7.5.3.tgz#5be5224c2780c02e7acdbda7a8662ff92a724afd"
-  integrity sha512-qnHz/g84mqLenUAoyi6HL181xvq3izVG/sD2hQ6iX3QjGQKMnbWNVo6M3YK4FJI1ht91NzhFxs6qvXHFcA1o4g==
+"@ionic/react@7.5.4", "@ionic/react@^7.0.0":
+  version "7.5.4"
+  resolved "https://registry.yarnpkg.com/@ionic/react/-/react-7.5.4.tgz#9d85118bdc2a5aa5e854f424726d7feb389d5bd2"
+  integrity sha512-SJ/iHPgHg5FeOka8AzoSWFM1zi923yqTEEqTjAJczjow4V276e3YWy5YoVzPMg+k2ti4YaIJSkUU9hypcwfDMg==
   dependencies:
-    "@ionic/core" "7.5.3"
+    "@ionic/core" "7.5.4"
     ionicons "^7.0.0"
     tslib "*"
 
@@ -1418,7 +1418,7 @@
   resolved "https://registry.yarnpkg.com/@sinclair/typebox/-/typebox-0.27.8.tgz#6667fac16c436b5434a387a34dedb013198f6e6e"
   integrity sha512-+Fj43pSMwJs4KRrH/938Uf+uAELIgVBmQzg/q1YG10djyfA3TnrU8N8XzqCh/okZdszqBQTZf96idMfE5lnwTA==
 
-"@stencil/core@^4.0.3", "@stencil/core@^4.6.0":
+"@stencil/core@^4.0.3", "@stencil/core@^4.7.1":
   version "4.7.1"
   resolved "https://registry.yarnpkg.com/@stencil/core/-/core-4.7.1.tgz#38f3f42c2348bebd22aee34fc170518870b9baa0"
   integrity sha512-KDWA/3qDiABA5LqtHCmTVwORuzgu/YdC0FpSBwVmwlw6K8jUjbTA5JB6Q03da2F+EQlDHOVgbW0TNtHCm54uXQ==

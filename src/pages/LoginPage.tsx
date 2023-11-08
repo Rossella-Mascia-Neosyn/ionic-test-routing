@@ -5,12 +5,13 @@ import {
   IonPage,
   IonTitle,
   IonToolbar,
+  useIonRouter,
   useIonViewDidEnter,
   useIonViewDidLeave,
   useIonViewWillEnter,
   useIonViewWillLeave,
 } from '@ionic/react';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { AuthContext } from '../context/AuthContext';
 import { useHistory } from 'react-router';
 
@@ -22,6 +23,10 @@ const LoginPage = () => {
     let result = await login({ password: 'aaron', user: 'aaron' });
     result && history.replace('/home');
   };
+
+  useEffect(() => {
+    console.log('useEffect LoginPage');
+  }, [])
 
   useIonViewWillEnter(() => {
     console.log('will enter LoginPage');

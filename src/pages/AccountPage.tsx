@@ -1,5 +1,5 @@
-import { IonButton, IonContent, IonHeader, IonPage, IonTitle, IonToolbar, useIonViewDidEnter, useIonViewDidLeave, useIonViewWillEnter, useIonViewWillLeave } from "@ionic/react"
-import React from "react";
+import { IonButton, IonContent, IonHeader, IonPage, IonTitle, IonToolbar, useIonRouter, useIonViewDidEnter, useIonViewDidLeave, useIonViewWillEnter, useIonViewWillLeave } from "@ionic/react"
+import React, { useEffect } from "react";
 import { useHistory } from "react-router";
 import { AuthContext } from "../context/AuthContext";
 
@@ -20,6 +20,9 @@ const AccountPage = () => {
   useIonViewDidLeave(() => {
     console.log('did leave AccountPage');
   });
+  useEffect(() => {
+    console.log('useEffect AccountPage');
+  }, [])
   return (
     <IonPage>
       <IonHeader>
@@ -28,7 +31,7 @@ const AccountPage = () => {
         </IonToolbar>
         <IonButton
           onClick={() => {
-            history.go(-1);
+            history.goBack();
           }}
         >
           Go back

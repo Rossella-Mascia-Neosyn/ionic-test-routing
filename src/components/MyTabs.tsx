@@ -1,4 +1,4 @@
-import { IonButton, IonIcon, IonLabel, IonSegment, IonSegmentButton } from '@ionic/react';
+import { IonButton, IonIcon, IonLabel, IonSegment, IonSegmentButton, useIonRouter } from '@ionic/react';
 import { call, heart, pin } from 'ionicons/icons';
 import { FC } from 'react'
 import { useHistory, useLocation } from 'react-router';
@@ -15,7 +15,6 @@ const MyTabs: FC<MyTabsProps> = () => {
   const hiddenRoutes = ['/account', '/account/edit-account'];
   const removeParams = '/' + location.pathname.split('/')[1];
   const isHiddenRoute = hiddenRoutes.includes(removeParams);
-  console.log(location.pathname, 'location.pathname');
 
   return (
     !isHiddenRoute && <IonSegment value={location.pathname.split('/')[1]} style={{ position: 'fixed', bottom: '0' }}>

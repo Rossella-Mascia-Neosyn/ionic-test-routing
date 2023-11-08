@@ -10,7 +10,7 @@ import {
   useIonViewWillEnter,
   useIonViewWillLeave,
 } from '@ionic/react';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { AuthContext } from '../context/AuthContext';
 import { useHistory } from 'react-router';
 
@@ -18,8 +18,14 @@ const Home = () => {
   const { authValues, logout } = React.useContext(AuthContext);
   const history = useHistory();
 
+  const fetchData = async () => {
+    const result = await fetch('https://randomuser.me/api/?page=1&results=20');
+    console.log(result, 'result');
+  }
+
   useIonViewWillEnter(() => {
     console.log('will enter Home');
+    fetchData();
   });
   useIonViewDidEnter(() => {
     console.log('did enter Home');
@@ -31,6 +37,11 @@ const Home = () => {
   useIonViewDidLeave(() => {
     console.log('did leave Home');
   });
+
+  useEffect(() => {
+    console.log('useEffect Home');
+    fetchData();
+  }, []);
 
   return (
     <IonPage>
